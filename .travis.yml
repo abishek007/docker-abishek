@@ -18,5 +18,6 @@ deploy:
   env: "DockerAbishek-env"
   bucket_name: "elasticbeanstalk-us-east-2-572810396031"
   bucket_path: "docker-abishek"
+  edge: true
   on:
     branch: master
