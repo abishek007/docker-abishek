@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dockerabishek -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dockerabishek npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
+  region: "us-east-2"
+  app: "docker-abishek"
+  env: "DockerAbishek-env"
+  bucket_name: "elasticbeanstalk-us-east-2-572810396031"
+  bucket_path: "docker-abishek"
+  on:
+    branch: master
