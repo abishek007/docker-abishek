@@ -14,7 +14,7 @@ deploy:
   secret_access_key: $SECRET_ACCESS_KEY
   region: "us-east-2"
   app: "docker-abishek"
-  env: "DockerAbishek-env"
+  env: "DockerAbishek-env-1"
   bucket_name: "elasticbeanstalk-us-east-2-572810396031"
   bucket_path: "docker-abishek"
   on:
